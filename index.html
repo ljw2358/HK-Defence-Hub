@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HK-Defence-Hub | Strategic AI & Robotics</title>
+    <title>HK-Defence-Hub | Global Strategic Initiative</title>
     <style>
-        body { font-family: 'Inter', -apple-system, sans-serif; background: #050505; color: #e0e0e0; margin: 0; line-height: 1.6; }
-        .container { width: 90%; max-width: 1000px; margin: auto; padding: 40px 0; }
-        header { border-bottom: 1px solid #222; padding: 30px 0; text-align: center; }
-        h1 { color: #00aaff; font-size: 2.8rem; margin: 0; }
-        .hero { text-align: center; padding: 80px 0; border-bottom: 1px solid #222; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #050505; color: #e0e0e0; margin: 0; line-height: 1.8; }
+        .container { width: 90%; max-width: 1000px; margin: auto; padding: 60px 0; }
+        header { border-bottom: 1px solid #222; padding-bottom: 30px; text-align: center; }
+        h1 { color: #00aaff; font-size: 2.5rem; margin-bottom: 10px; }
+        .hero { text-align: center; padding: 40px 0; }
         .lang-selector { margin: 30px 0; text-align: center; }
-        select { background: #111; color: #00aaff; padding: 12px 25px; border: 1px solid #00aaff; border-radius: 8px; font-size: 16px; cursor: pointer; }
-        .vision-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
-        .box { background: #111; padding: 30px; border-radius: 12px; border: 1px solid #222; }
-        .box h3 { color: #00aaff; }
-        footer { text-align: center; color: #444; margin-top: 80px; font-size: 0.9rem; }
+        select { background: #111; color: #00aaff; padding: 12px 20px; border: 1px solid #00aaff; border-radius: 6px; cursor: pointer; font-size: 1rem; }
+        .vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        .card { background: #111; padding: 30px; border-left: 4px solid #00aaff; border-radius: 8px; }
+        .card h3 { color: #00aaff; margin-top: 0; }
+        footer { margin-top: 80px; text-align: center; color: #666; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -23,19 +23,20 @@
     <header>
         <div class="container">
             <h1>HK-Defence-Hub</h1>
+            <p>Strategic Initiative for Future Defense & Robotics</p>
         </div>
     </header>
 
     <div class="container">
         <div class="lang-selector">
-            <select id="lang" onchange="changeLang(this.value)">
+            <select id="lang" onchange="updateContent(this.value)">
                 <option value="ko">🇰🇷 한국어</option>
                 <option value="en">🇺🇸 English</option>
                 <option value="zh">🇨🇳 中文</option>
                 <option value="ar">🇸🇦 العربية</option>
                 <option value="hi">🇮🇳 हिन्दी</option>
                 <option value="es">🇪🇸 Español</option>
-                <option value="pt">🇧🇷 Português (Brasil)</option>
+                <option value="pt">🇧🇷 Português</option>
                 <option value="uk">🇺🇦 Українська</option>
                 <option value="ja">🇯🇵 日本語</option>
                 <option value="ru">🇷🇺 Русский</option>
@@ -46,49 +47,50 @@
         </div>
 
         <section class="hero">
-            <h2 id="txt-title">방산과 로봇, 미래 전략의 중심</h2>
-            <p id="txt-desc">AI 기반 방산 기술과 휴머노이드 로봇 생태계의 융합 전략 허브.</p>
+            <h2 id="title">방산과 로봇, 미래 전략의 중심</h2>
+            <p id="desc">HK-Defence-Hub는 AI 기반 방산 기술과 휴머노이드 로봇 생태계의 융합을 연구하는 최상위 전략 허브입니다.</p>
         </section>
 
-        <div class="vision-section">
-            <div class="box">
-                <h3 id="txt-v1">핵심 비전</h3>
-                <p id="txt-v1-d">하드웨어의 단순 소유를 넘어, 'OpenMind' OS와 분산 지능을 통해 방산 로봇의 '뇌'를 장악합니다.</p>
+        <div class="vision-grid">
+            <div class="card">
+                <h3 id="v1-t">핵심 비전: OS 장악</h3>
+                <p id="v1-d">단순 하드웨어 소유를 넘어, 'OpenMind' OS를 통해 전 세계 로봇의 핵심 지능을 점유하고 통제권을 확보합니다.</p>
             </div>
-            <div class="box">
-                <h3 id="txt-v2">전략적 가치</h3>
-                <p id="txt-v2-d">파이 네트워크 기반의 분산 자본으로 로봇 기술의 주권을 확보하고 글로벌 안보 생태계를 재편합니다.</p>
+            <div class="card">
+                <h3 id="v2-t">전략적 가치: 기술 주권</h3>
+                <p id="v2-d">분산 자본과 파이 네트워크 생태계를 활용하여, 로봇 산업의 지배력을 공고히 하고 새로운 글로벌 보안 표준을 제시합니다.</p>
             </div>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 HK-Defence-Hub. Strategic Engineering for Global Security.
+        &copy; 2026 HK-Defence-Hub. All Rights Reserved.
     </footer>
 
     <script>
         const content = {
-            ko: { title: "방산과 로봇, 미래 전략의 중심", desc: "AI 기반 방산 기술과 휴머노이드 로봇 생태계의 융합 전략 허브.", v1: "핵심 비전", v1d: "하드웨어의 단순 소유를 넘어, 'OpenMind' OS와 분산 지능을 통해 방산 로봇의 '뇌'를 장악합니다.", v2: "전략적 가치", v2d: "파이 네트워크 기반의 분산 자본으로 로봇 기술의 주권을 확보하고 글로벌 안보 생태계를 재편합니다." },
-            en: { title: "Defense & Robotics Strategy", desc: "A strategic hub for the fusion of AI defense tech and humanoid robotics.", v1: "Core Vision", v1d: "We seize the 'brain' of defense robots via 'OpenMind' OS and decentralized intelligence.", v2: "Strategic Value", v2d: "Securing technological sovereignty and reshaping global security via decentralized capital." },
-            zh: { title: "国防与机器人战略中心", desc: "人工智能国防技术与人形机器人生态系统融合的战略中心。", v1: "核心愿景", v1d: "通过“OpenMind”操作系统和分布式智能，我们掌控防御机器人的“大脑”。", v2: "战略价值", v2d: "以去中心化资本保障技术主权，重塑全球安全格局。" },
-            ar: { title: "مركز استراتيجيات الدفاع والروبوتات", desc: "مركز استراتيجي لدمج تقنيات الدفاع بالذكاء الاصطناعي وأنظمة الروبوتات.", v1: "الرؤية الأساسية", v1d: "نحن نسيطر على عقل الروبوتات الدفاعية عبر نظام OpenMind والذكاء اللامركزي.", v2: "القيمة الاستراتيجية", v2d: "تأمين السيادة التكنولوجية وإعادة تشكيل الأمن العالمي عبر رأس المال اللامركزي." },
-            hi: { title: "रक्षा और रोबोटिक्स रणनीति केंद्र", desc: "AI रक्षा तकनीक और ह्यूमनॉइड रोबोटिक्स के एकीकरण के लिए रणनीतिक केंद्र।", v1: "मुख्य दृष्टिकोण", v1d: "हम ओपनमाइंड ओएस के माध्यम से रक्षा रोबोटों के 'मस्तिष्क' को नियंत्रित करते हैं।", v2: "रणनीतिक मूल्य", v2d: "विकेंद्रीकृत पूंजी के माध्यम से तकनीकी संप्रभुता सुरक्षित करना और वैश्विक सुरक्षा को नया आकार देना।" },
-            es: { title: "Estrategia de Defensa y Robótica", desc: "Centro estratégico para la fusión de tecnología de defensa con IA y robótica.", v1: "Visión Central", v1d: "Tomamos el 'cerebro' de los robots de defensa mediante el sistema operativo OpenMind.", v2: "Valor Estratégico", v2d: "Asegurando la soberanía tecnológica y remodelando la seguridad global con capital descentralizado." },
-            pt: { title: "Estratégia de Defesa e Robótica", desc: "Centro estratégico para a fusão de tecnologia de defesa com IA e robótica.", v1: "Visão Central", v1d: "Dominamos o 'cérebro' dos robôs de defesa através do sistema operacional OpenMind.", v2: "Valor Estratégico", v2d: "Garantindo a soberania tecnológica e remodelando a segurança global com capital descentralizado." },
-            uk: { title: "Оборонні та робототехнічні стратегії", desc: "Стратегічний центр дослідження оборонних технологій ШІ та робототехніки.", v1: "Основне бачення", v1d: "Ми беремо під контроль 'мозок' оборонних роботів через ОС OpenMind.", v2: "Стратегічна цінність", v2d: "Забезпечення технологічного суверенітету та формування нової архітектури глобальної безпеки." },
-            ja: { title: "防衛・ロボット工学戦略センター", desc: "AI防衛技術とヒューマノイドロボット生態系の融合研究拠点。", v1: "コアビジョン", v1d: "OpenMind OSを通じて防衛ロボットの「脳」を掌握します。", v2: "戦略的価値", v2d: "分散型資本を通じて技術主権を確保し、世界の安全保障を再編します。" },
-            ru: { title: "Оборонные и робототехнические стратегии", desc: "Центр интеграции оборонных ИИ-технологий и робототехники.", v1: "Основное видение", v1d: "Мы захватываем «мозг» оборонных роботов с помощью ОС OpenMind.", v2: "Стратегическая ценность", v2d: "Обеспечение технологического суверенитета и переформатирование глобальной безопасности." },
-            vi: { title: "Chiến lược Quốc phòng và Robot", desc: "Trung tâm chiến lược về sự hợp nhất công nghệ quốc phòng AI và robot.", v1: "Tầm nhìn cốt lõi", v1d: "Chúng tôi nắm quyền kiểm soát 'bộ não' của robot phòng thủ thông qua OpenMind OS.", v2: "Giá trị chiến lược", v2d: "Đảm bảo chủ quyền công nghệ và định hình lại an ninh toàn cầu thông qua vốn phi tập trung." },
-            th: { title: "ยุทธศาสตร์การป้องกันประเทศและหุ่นยนต์", desc: "ศูนย์ยุทธศาสตร์สำหรับการผสมผสานเทคโนโลยีป้องกันประเทศด้วย AI และหุ่นยนต์", v1: "วิสัยทัศน์หลัก", v1d: "เราเข้าควบคุม 'สมอง' ของหุ่นยนต์ป้องกันประเทศผ่าน OpenMind OS", v2: "คุณค่าเชิงยุทธศาสตร์", v2d: "การสร้างอธิปไตยทางเทคโนโลยีและกำหนดรูปแบบความปลอดภัยของโลกใหม่ด้วยทุนแบบกระจายอำนาจ" },
-            id: { title: "Strategi Pertahanan dan Robotika", desc: "Pusat strategis untuk penggabungan teknologi pertahanan AI dan robotika.", v1: "Visi Inti", v1d: "Kami menguasai 'otak' robot pertahanan melalui OpenMind OS.", v2: "Nilai Strategis", v2d: "Mengamankan kedaulatan teknologi dan membentuk kembali keamanan global melalui modal terdesentralisasi." }
+            ko: { title: "방산과 로봇, 미래 전략의 중심", desc: "AI 기반 방산 기술과 휴머노이드 로봇 생태계의 융합을 연구하는 최상위 전략 허브입니다.", v1t: "핵심 비전: OS 장악", v1d: "단순 하드웨어 소유를 넘어, 'OpenMind' OS를 통해 전 세계 로봇의 핵심 지능을 점유하고 통제권을 확보합니다.", v2t: "전략적 가치: 기술 주권", v2d: "분산 자본과 파이 네트워크 생태계를 활용하여, 로봇 산업의 지배력을 공고히 하고 새로운 글로벌 보안 표준을 제시합니다." },
+            en: { title: "Center for Defense & Robotics Strategy", desc: "HK-Defence-Hub is the premier strategic center researching the fusion of AI defense technologies and humanoid robotics ecosystems.", v1t: "Core Vision: OS Dominance", v1d: "Beyond mere hardware, we seize the 'OpenMind' OS to secure global control over robotic intelligence.", v2t: "Strategic Value: Tech Sovereignty", v2d: "Leveraging decentralized capital and the Pi ecosystem to solidify industrial dominance and establish new security standards." },
+            zh: { title: "国防与机器人战略中心", desc: "HK-Defence-Hub 是研究人工智能国防技术与人形机器人生态系统融合的顶级战略中心。", v1t: "核心愿景：掌控OS", v1d: "超越单纯的硬件所有权，我们通过“OpenMind”操作系统占领全球机器人的核心智能。", v2t: "战略价值：技术主权", v2d: "利用去中心化资本与Pi网络生态，稳固工业统治力，确立全球安全新准则。" },
+            ar: { title: "مركز استراتيجيات الدفاع والروبوتات", desc: "HK-Defence-Hub هو المركز الاستراتيجي الأول لبحث دمج تقنيات الدفاع بالذكاء الاصطناعي وأنظمة الروبوتات.", v1t: "الرؤية الأساسية: السيطرة على نظام التشغيل", v1d: "بعيداً عن مجرد امتلاك الأجهزة، نحن نسيطر على عقل الروبوتات العالمي عبر نظام OpenMind.", v2t: "القيمة الاستراتيجية: السيادة التكنولوجية", v2d: "استثمار رأس المال اللامركزي وشبكة Pi لترسيخ الهيمنة الصناعية ووضع معايير أمنية عالمية جديدة." },
+            hi: { title: "रक्षा और रोबोटिक्स रणनीति केंद्र", desc: "HK-Defence-Hub AI रक्षा प्रौद्योगिकियों और ह्यूमनॉइड रोबोटिक्स के एकीकरण पर शोध करने वाला प्रमुख रणनीतिक केंद्र है।", v1t: "मुख्य दृष्टिकोण: ओएस प्रभुत्व", v1d: "हार्डवेयर से आगे बढ़कर, हम रोबोटिक इंटेलिजेंस पर वैश्विक नियंत्रण सुरक्षित करने के लिए 'ओपनमाइंड' ओएस को नियंत्रित करते हैं।", v2t: "रणनीतिक मूल्य: तकनीकी संप्रभुता", v2d: "औद्योगिक प्रभुत्व को मजबूत करने और नए सुरक्षा मानक स्थापित करने के लिए विकेंद्रीकृत पूंजी और Pi पारिस्थितिकी तंत्र का लाभ उठाना।" },
+            es: { title: "Centro de Estrategia de Defensa y Robótica", desc: "HK-Defence-Hub es el centro estratégico principal para la fusión de tecnologías de defensa con IA y ecosistemas de robótica humanoide.", v1t: "Visión Central: Dominio del SO", v1d: "Más allá del hardware, tomamos el 'OpenMind' OS para asegurar el control global sobre la inteligencia robótica.", v2t: "Valor Estratégico: Soberanía Tecnológica", v2d: "Aprovechando el capital descentralizado y el ecosistema Pi para consolidar el dominio industrial y establecer nuevos estándares de seguridad." },
+            pt: { title: "Centro de Estratégia de Defesa e Robótica", desc: "O HK-Defence-Hub é o principal centro estratégico que pesquisa a fusão de tecnologias de defesa com IA e ecossistemas de robótica humanoide.", v1t: "Visão Central: Domínio do SO", v1d: "Para além do hardware, dominamos o 'OpenMind' OS para garantir o controlo global sobre a inteligência robótica.", v2t: "Valor Estratégico: Soberania Tecnológica", v2d: "Aproveitando o capital descentralizado e o ecossistema Pi para consolidar o domínio industrial e estabelecer novos padrões de segurança." },
+            uk: { title: "Центр оборонних та робототехнічних стратегій", desc: "HK-Defence-Hub — це провідний стратегічний центр дослідження злиття оборонних технологій ШІ та екосистем людиноподібних роботів.", v1t: "Основне бачення: Домінування ОС", v1d: "Ми виходимо за межі обладнання, беручи під контроль ОС 'OpenMind' для забезпечення глобального управління інтелектом роботів.", v2t: "Стратегічна цінність: Технологічний суверенітет", v2d: "Використання децентралізованого капіталу та екосистеми Pi для зміцнення промислового домінування та встановлення нових стандартів безпеки." },
+            ja: { title: "防衛・ロボット工学戦略センター", desc: "HK-Defence-Hubは、AI防衛技術とヒューマノイドロボット生態系の融合を研究するトップ戦略拠点です。", v1t: "コアビジョン：OSの掌握", v1d: "単なるハードウェア所有を超え、「OpenMind」OSを通じて世界のロボット知能の制御権を確保します。", v2t: "戦略的価値：技術主権", v2d: "分散型資本とPiネットワークエコシステムを活用し、産業支配力を強固にし、新たなグローバルセキュリティ基準を確立します。" },
+            ru: { title: "Центр оборонных и робототехнических стратегий", desc: "HK-Defence-Hub — ведущий стратегический центр по изучению интеграции оборонных ИИ-технологий и робототехники.", v1t: "Основное видение: Доминирование ОС", v1d: "Мы выходим за рамки оборудования, захватывая ОС 'OpenMind' для обеспечения глобального контроля над интеллектом роботов.", v2t: "Стратегическая ценность: Технологический суверенитет", v2d: "Использование децентрализованного капитала и экосистемы Pi для укрепления промышленного доминирования и установления новых стандартов безопасности." },
+            vi: { title: "Trung tâm Chiến lược Quốc phòng và Robot", desc: "HK-Defence-Hub là trung tâm chiến lược hàng đầu nghiên cứu sự hợp nhất của công nghệ quốc phòng AI và hệ sinh thái robot hình người.", v1t: "Tầm nhìn cốt lõi: Kiểm soát OS", v1d: "Vượt xa phần cứng đơn thuần, chúng tôi nắm quyền kiểm soát 'OpenMind' OS để đảm bảo quyền quản lý trí tuệ robot toàn cầu.", v2t: "Giá trị chiến lược: Chủ quyền công nghệ", v2d: "Tận dụng vốn phi tập trung và hệ sinh thái Pi để củng cố quyền thống trị ngành công nghiệp và thiết lập các tiêu chuẩn an ninh mới." },
+            th: { title: "ศูนย์ยุทธศาสตร์การป้องกันประเทศและหุ่นยนต์", desc: "HK-Defence-Hub เป็นศูนย์ยุทธศาสตร์ชั้นนำที่วิจัยการผสมผสานเทคโนโลยีการป้องกันประเทศด้วย AI และระบบนิเวศหุ่นยนต์ฮิวแมนนอยด์", v1t: "วิสัยทัศน์หลัก: การครอบครองระบบปฏิบัติการ", v1d: "เราก้าวข้ามผ่านเพียงแค่ฮาร์ดแวร์ โดยเข้าควบคุม 'OpenMind' OS เพื่อสร้างความมั่นใจในการควบคุมอัจฉริยะของหุ่นยนต์ทั่วโลก", v2t: "คุณค่าเชิงยุทธศาสตร์: อธิปไตยทางเทคโนโลยี", v2d: "การใช้ประโยชน์จากเงินทุนแบบกระจายอำนาจและระบบนิเวศของ Pi เพื่อสร้างความโดดเด่นในอุตสาหกรรมและกำหนดมาตรฐานความปลอดภัยใหม่ของโลก" },
+            id: { title: "Pusat Strategi Pertahanan dan Robotika", desc: "HK-Defence-Hub adalah pusat strategis utama yang meneliti penggabungan teknologi pertahanan AI dan ekosistem robot humanoid.", v1t: "Visi Inti: Dominasi OS", v1d: "Melampaui sekadar perangkat keras, kami menguasai 'OpenMind' OS untuk mengamankan kontrol global atas kecerdasan robotik.", v2t: "Nilai Strategis: Kedaulatan Teknologi", v2d: "Memanfaatkan modal terdesentralisasi dan ekosistem Pi untuk memperkuat dominasi industri dan menetapkan standar keamanan global yang baru." }
         };
-        function changeLang(lang) {
-            document.getElementById('txt-title').innerText = content[lang].title;
-            document.getElementById('txt-desc').innerText = content[lang].desc;
-            document.getElementById('txt-v1').innerText = content[lang].v1;
-            document.getElementById('txt-v1-d').innerText = content[lang].v1d;
-            document.getElementById('txt-v2').innerText = content[lang].v2;
-            document.getElementById('txt-v2-d').innerText = content[lang].v2d;
+
+        function updateContent(lang) {
+            document.getElementById('title').innerText = content[lang].title;
+            document.getElementById('desc').innerText = content[lang].desc;
+            document.getElementById('v1-t').innerText = content[lang].v1t;
+            document.getElementById('v1-d').innerText = content[lang].v1d;
+            document.getElementById('v2-t').innerText = content[lang].v2t;
+            document.getElementById('v2-d').innerText = content[lang].v2d;
         }
     </script>
 </body>
