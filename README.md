@@ -1,5 +1,4 @@
 # HK-Defence-Hub
-# HK-Defence-Hub
 Welcome to the official hub for HK WorldBank's defense technology and robotics initiative.
 
 ## Our Mission
