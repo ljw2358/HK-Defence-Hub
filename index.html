@@ -2,11 +2,127 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>HK-Defence-Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HK-ROBOT</title>
+    <style>
+        /* 프리미엄 다크 모드 스타일 */
+        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background-color: #000; color: #fff; line-height: 1.8; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+        /* 상단 네비게이션 */
+        header { background: rgba(0,0,0,0.95); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 900; color: #007bff; text-decoration: none; }
+
+        /* 언어 선택 (모바일 최적화) */
+        .lang-selector { position: relative; }
+        .lang-btn { background: #111; color: #fff; border: 1.5px solid #007bff; padding: 8px 15px; cursor: pointer; border-radius: 5px; font-size: 13px; }
+        .lang-dropdown { display: none; position: absolute; right: 0; background: #111; min-width: 140px; border: 1px solid #333; border-radius: 5px; margin-top: 5px; }
+        .lang-dropdown a { color: #ccc; padding: 12px; text-decoration: none; display: block; font-size: 14px; border-bottom: 1px solid #222; }
+        .lang-dropdown a:hover { background: #007bff; color: #fff; }
+        .lang-selector:hover .lang-dropdown { display: block; }
+
+        /* 히어로 섹션 */
+        .hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; background: radial-gradient(circle, #111 0%, #000 100%); }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; font-weight: 900; }
+        .hero-content p { font-size: 1.3rem; color: #999; max-width: 800px; margin: 0 auto; }
+
+        /* 핵심 비전 섹션 */
+        .vision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 80px 0; }
+        .vision-card { background: #0a0a0a; padding: 45px; border-radius: 20px; border: 1px solid #333; transition: 0.4s; }
+        .vision-card:hover { border-color: #007bff; transform: translateY(-10px); }
+        .vision-card h3 { color: #007bff; font-size: 1.5rem; margin-top: 0; margin-bottom: 20px; }
+        .vision-card p { font-size: 1.1rem; color: #888; }
+
+        /* 푸터 */
+        footer { padding: 100px 50px; text-align: center; background: #000; border-top: 1px solid #111; }
+        .contact-email { color: #007bff; text-decoration: none; font-weight: 200; }
+        .copyright { color: #333; margin-top: 40px; font-size: 12px; }
+    </style>
 </head>
 <body>
-    <h1>Welcome to HK-Defence-Hub</h1>
-    <p>Exploring the future of AI-driven defense technology and humanoid robotics.</p>
-    <p>Empowering global security through innovation.</p>
+
+    <header>
+        <div class="container header-flex">
+            <a href="#" class="logo">HK-ROBOT</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="lang-btn-text">🌐 Language (언어)</button>
+                <div class="lang-dropdown">
+                    <a href="javascript:void(0)" onclick="setLang('ko', '한국어')">한국어</a>
+                    <a href="javascript:void(0)" onclick="setLang('en', 'English')">English</a>
+                    <a href="javascript:void(0)" onclick="setLang('zh', '中文')">中文</a>
+                    <a href="javascript:void(0)" onclick="setLang('ar', 'العربية')">العربية</a>
+                    <a href="javascript:void(0)" onclick="setLang('hi', 'हिन्दी')">हिन्दी</a>
+                    <a href="javascript:void(0)" onclick="setLang('es', 'Español')">Español</a>
+                    <a href="javascript:void(0)" onclick="setLang('pt', 'Português')">Português</a>
+                    <a href="javascript:void(0)" onclick="setLang('uk', 'Українська')">Українська</a>
+                    <a href="javascript:void(0)" onclick="setLang('ja', '日本語')">日本語</a>
+                    <a href="javascript:void(0)" onclick="setLang('ru', 'Русский')">Русский</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 id="txt-h1">HK-ROBOT: 로봇공학의 혁명</h1>
+            <p id="txt-p1">우리는 80조 원을 들여 하드웨어를 사지 않습니다. 차세대 로봇의 뇌(OS)인 OpenMind를 장악하여, 전 세계 로봇에 파이(Pi)의 영혼을 심겠습니다.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="vision-grid">
+            <div class="vision-card">
+                <h3 id="txt-v1-t">1. 기술 독점</h3>
+                <p id="txt-v1-d">우리는 범용 OS인 OpenMind를 통해 로봇 생태계의 패러다임을 전환합니다.</p>
+            </div>
+            <div class="vision-card">
+                <h3 id="txt-v2-t">2. 제조 혁신</h3>
+                <p id="txt-v2-d">세계 최초의 분산 소액 자본을 활용하여 로봇 산업의 지배력을 확보합니다.</p>
+            </div>
+            <div class="vision-card">
+                <h3 id="txt-v3-t">3. 실시간 통제</h3>
+                <p id="txt-v3-d">OpenMind를 통해 전 세계 로봇의 AI 및 지능 업데이트를 실시간으로 통제합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="contact-box">
+                <p style="color:#555; margin-bottom: 10px;">Contact Us</p>
+                <a href="mailto:info@hkwb.co.kr" class="contact-email">info@hkwb.co.kr</a>
+            </div>
+            <p class="copyright">&copy; 2026 HK Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            'ko': { h1: "HK-ROBOT: 로봇공학의 혁명", p1: "우리는 80조 원을 들여 하드웨어를 사지 않습니다. 차세대 로봇의 뇌(OS)인 OpenMind를 장악하여, 전 세계 로봇에 파이(Pi)의 영혼을 심겠습니다.", v1t: "1. 기술 독점", v1d: "우리는 범용 OS인 OpenMind를 통해 로봇 생태계의 패러다임을 전환합니다.", v2t: "2. 제조 혁신", v2d: "세계 최초의 분산 소액 자본을 활용하여 로봇 산업의 지배력을 확보합니다.", v3t: "3. 실시간 통제", v3d: "OpenMind를 통해 전 세계 로봇의 AI 및 지능 업데이트를 실시간으로 통제합니다." },
+            'en': { h1: "HK-ROBOT: Robotics Revolution", p1: "We do not spend 80 trillion won buying hardware. We seize the 'OpenMind' OS to embed the soul of Pi into robots worldwide.", v1t: "1. Tech Monopoly", v1d: "We are shifting the robotic paradigm through the universal OpenMind OS.", v2t: "2. Manufacturing Innovation", v2d: "Securing industrial dominance via world-first decentralized capital.", v3t: "3. Real-time Control", v3d: "Controlling AI and intelligence updates for global robots in real-time." },
+            'zh': { h1: "HK-ROBOT: 机器人革命", p1: "我们不花80万亿韩元购买硬件。我们将掌控下一代机器人大脑“OpenMind”，将Pi的灵魂注入全球机器人中。", v1t: "1. 技术垄断", v1d: "我们通过通用OpenMind OS转变机器人范式。", v2t: "2. 制造创新", v2d: "通过全球首个分散式资本确保工业主导地位。", v3t: "3. 实时控制", v3d: "实时控制全球机器人的AI和智能更新。" },
+            'ar': { h1: "HK-ROBOT: ثورة الروبوتات", p1: "نحن لا ننفق 80 تريليون وون لشراء الأجهزة. نحن نسيطر على عقل الروبوت 'OpenMind' لغرس روح Pi في الروبوتات.", v1t: "1. احتكار التكنولوجيا", v1d: "نحن نغير نموذج الروبوتات من خلال نظام التشغيل العام OpenMind.", v2t: "2. ابتكار التصنيع", v2d: "تأمين الهيمنة الصناعية من خلال رأس المال اللامركزي.", v3t: "3. التحكم في الوقت الفعلي", v3d: "التحكم في تحديثات الذكاء الاصطناعي للروبوتات عالمياً." },
+            'hi': { h1: "HK-ROBOT: रोबोटिक्स क्रांति", p1: "हम हार्डवेयर खरीदने के लिए 80 ट्रिलियन वोन खर्च नहीं करते। हम अगली पीढ़ी के मस्तिष्क 'ओपनमाइंड' (OpenMind) को नियंत्रित करते हैं।", v1t: "1. तकनीकी एकाधिकार", v1d: "हम ओपनमाइंड ओएस के माध्यम से रोबोटिक्स प्रतिमान को बदल रहे हैं।", v2t: "2. विनिर्माण नवाचार", v2d: "विकेंद्रीकृत पूंजी के माध्यम से औद्योगिक प्रभुत्व सुरक्षित करना।", v3t: "3. रीयल-टाइम नियंत्रण", v3d: "वैश्विक रोबोटों के AI और इंटेलिजेंस अपडेट को रीयल-टाइम में नियंत्रित करना।" },
+            'es': { h1: "HK-ROBOT: Revolución Robótica", p1: "No gastamos 80 billones de wones en hardware. Nos apoderamos del cerebro robótico 'OpenMind' para implantar el alma de Pi.", v1t: "1. Monopolio Tecnológico", v1d: "Cambiamos el paradigma robótico a través del sistema operativo universal OpenMind.", v2t: "2. Innovación en Fabricación", v2d: "Asegurando el dominio industrial mediante capital descentralizado.", v3t: "3. Control en Tiempo Real", v3d: "Controlando actualizaciones de IA para robots globales en tiempo real." },
+            'pt': { h1: "HK-ROBOT: Revolução Robótica", p1: "Não gastamos 80 trilhões de wones em hardware. Dominamos o cérebro robótico 'OpenMind' para implantar a alma do Pi.", v1t: "1. Monopólio Tecnológico", v1d: "Mudando o paradigma robótico através do sistema operacional universal OpenMind.", v2t: "2. Inovação em Manufatura", v2d: "Garantindo domínio industrial via capital descentralizado.", v3t: "3. Controle em Tempo Real", v3d: "Controlando atualizações de IA para robôs globais em tempo real." },
+            'uk': { h1: "HK-ROBOT: Робототехнічна революція", p1: "Ми не витрачаємо 80 трильйонів вон на залізо. Ми беремо під контроль мозок робота 'OpenMind', щоб впровадити душу Pi.", v1t: "1. Технологічна монополія", v1d: "Зміна парадигми робототехніки через універсальну ОС OpenMind.", v2t: "2. Інновації у виробництві", v2d: "Забезпечення промислового домінування через децентралізований капітал.", v3t: "3. Контроль у реальному часі", v3d: "Контроль оновлень штучного інтелекту для роботів у реальному часі." },
+            'ja': { h1: "HK-ROBOT: ロボット工学の革命", p1: "私たちは80兆ウォンをハードウェアに費やしません。次世代脳「OpenMind」を掌握し、Piの魂を吹き込みます。", v1t: "1. 技術独占", v1d: "ユニバーサルOpenMind OSを通じてロボット工学のパラダイムを転換します。", v2t: "2. 製造革新", v2d: "分散型資本による世界初の産業支配力の確保。", v3t: "3. リアルタイム制御", v3d: "世界中のロボットのAIおよび知能アップデートをリアルタイムで制御します。" },
+            'ru': { h1: "HK-ROBOT: Робототехническая революция", p1: "Мы не тратим 80 триллионов вон на оборудование. Мы берем под контроль мозг робота 'OpenMind', чтобы внедрить душу Pi.", v1t: "1. Технологическая монополия", v1d: "Изменение парадигмы робототехники через универсальную ОС OpenMind.", v2t: "2. Инновации в производстве", v2d: "Обеспечение промышленного господства через децентрализованный капитал.", v3t: "3. Контроль в реальном времени", v3d: "Контроль обновлений ИИ для роботов в реальном времени." }
+        };
+
+        function setLang(lang, name) {
+            const t = translations[lang];
+            document.getElementById('txt-h1').innerHTML = t.h1;
+            document.getElementById('txt-p1').innerHTML = t.p1;
+            document.getElementById('txt-v1-t').innerHTML = t.v1t;
+            document.getElementById('txt-v1-d').innerHTML = t.v1d;
+            document.getElementById('txt-v2-t').innerHTML = t.v2t;
+            document.getElementById('txt-v2-d').innerHTML = t.v2d;
+            document.getElementById('txt-v3-t').innerHTML = t.v3t;
+            document.getElementById('txt-v3-d').innerHTML = t.v3d;
+            document.getElementById('lang-btn-text').innerHTML = "🌐 " + name;
+        }
+    </script>
 </body>
 </html>
